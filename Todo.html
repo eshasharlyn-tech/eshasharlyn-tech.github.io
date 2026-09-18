@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tugas JS — Esha Sharlyn Putrinta Br Sembiring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { plum:'#3D1F2B', blush:'#FFF1F5', rose:'#E8749A', lilac:'#B98BC9', mauve:'#9C7B87' },
+      fontFamily: { display:['"Fraunces"','serif'], body:['"Inter"','sans-serif'] }
+    } }
+  }
+</script>
+</head>
+<body class="bg-blush text-plum font-body antialiased">
+
+  <header class="border-b border-plum/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
+      <a href="index.html" class="font-display font-bold text-lg">shrlyn</a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-mauve hover:text-rose transition-colors">Beranda</a></li>
+        <li><a href="about.html" class="text-mauve hover:text-rose transition-colors">Tentang</a></li>
+        <li><a href="projects.html" class="text-mauve hover:text-rose transition-colors">Proyek</a></li>
+        <li><a href="todo.html" class="text-plum border-b-2 border-rose pb-1">Tugas JS</a></li>
+        <li><a href="contact.html" class="text-mauve hover:text-rose transition-colors">Kontak</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block bg-plum text-blush px-5 py-2.5 rounded-full text-sm font-medium hover:bg-rose focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 transition-colors">Hubungi Saya</a>
+      <button id="menu-btn" class="md:hidden p-2 -mr-2" aria-label="Buka menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </nav>
+    <ul id="mobile-menu" class="hidden md:hidden flex-col gap-1 px-6 pb-5 text-sm font-medium">
+      <li><a href="index.html" class="block py-2 text-mauve">Beranda</a></li>
+      <li><a href="about.html" class="block py-2 text-mauve">Tentang</a></li>
+      <li><a href="projects.html" class="block py-2 text-mauve">Proyek</a></li>
+      <li><a href="todo.html" class="block py-2 text-plum">Tugas JS</a></li>
+      <li><a href="contact.html" class="block py-2 text-mauve">Kontak</a></li>
+    </ul>
+  </header>
+
+  <section class="max-w-2xl mx-auto px-6 py-16 md:py-20">
+    <h1 class="font-display font-bold text-4xl sm:text-5xl mb-4">To-Do List</h1>
+    <p class="text-mauve mb-10">Satu per satu aja, pasti kelar! Catat tugasmu di sini, kerjakan, lalu centang kalau sudah selesai — semangat terus ya..</p>
+
+    <div class="bg-white rounded-3xl border border-plum/10 p-6 sm:p-8">
+      <div class="flex gap-3">
+        <input id="todo-input" type="text" placeholder="Tulis tugas baru..."
+          class="flex-1 rounded-xl border border-plum/20 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-rose" />
+        <button id="todo-add-btn"
+          class="bg-plum text-blush px-5 py-2.5 rounded-full text-sm font-medium hover:bg-rose focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 transition-colors">
+          Tambah
+        </button>
+      </div>
+
+      <ul id="todo-list" class="mt-6 space-y-2"></ul>
+
+      <p id="todo-empty" class="text-sm text-mauve mt-6 text-center">Belum ada tugas. Tambahkan satu di atas.</p>
+
+      <div id="todo-footer" class="hidden mt-6 pt-4 border-t border-plum/10 flex items-center justify-between text-sm text-mauve">
+        <span id="todo-count">0 tugas tersisa</span>
+        <button id="todo-clear-btn" class="text-rose font-medium hover:underline">Hapus yang selesai</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-mauve border-t border-plum/10">
+    <p>&copy; 2026 Esha Sharlyn Putrinta. Dibuat dengan Tailwind CSS.</p>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+      document.getElementById('mobile-menu').classList.toggle('flex');
+    });
+
+    let todos = [];
+
+    const inputEl = document.getElementById('todo-input');
+    const listEl = document.getElementById('todo-list');
+    const emptyEl = document.getElementById('todo-empty');
+    const footerEl = document.getElementById('todo-footer');
+    const countEl = document.getElementById('todo-count');
+
+    function render() {
+      listEl.innerHTML = '';
+
+      if (todos.length === 0) {
+        emptyEl.classList.remove('hidden');
+        footerEl.classList.add('hidden');
+        return;
+      }
+      emptyEl.classList.add('hidden');
+      footerEl.classList.remove('hidden');
+
+      todos.forEach((todo, index) => {
+        const li = document.createElement('li');
+        li.className = 'flex items-center gap-3 px-4 py-2.5 rounded-xl border border-plum/10 bg-blush';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = todo.done;
+        checkbox.className = 'w-4 h-4 accent-rose flex-shrink-0';
+        checkbox.addEventListener('change', () => {
+          todos[index].done = checkbox.checked;
+          render();
+        });
+
+        const span = document.createElement('span');
+        span.textContent = todo.text;
+        span.className = 'flex-1 text-sm ' + (todo.done ? 'line-through text-mauve' : 'text-plum');
+
+        const delBtn = document.createElement('button');
+        delBtn.innerHTML = '&times;';
+        delBtn.setAttribute('aria-label', 'Hapus tugas');
+        delBtn.className = 'text-mauve hover:text-rose text-lg leading-none flex-shrink-0';
+        delBtn.addEventListener('click', () => {
+          todos.splice(index, 1);
+          render();
+        });
+
+        li.append(checkbox, span, delBtn);
+        listEl.appendChild(li);
+      });
+
+      const remaining = todos.filter(t => !t.done).length;
+      countEl.textContent = `${remaining} tugas tersisa`;
+    }
+
+    function addTodo() {
+      const text = inputEl.value.trim();
+      if (text === '') return;
+      todos.push({ text, done: false });
+      inputEl.value = '';
+      render();
+    }
+
+    document.getElementById('todo-add-btn').addEventListener('click', addTodo);
+    inputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') addTodo();
+    });
+
+    document.getElementById('todo-clear-btn').addEventListener('click', () => {
+      todos = todos.filter(t => !t.done);
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

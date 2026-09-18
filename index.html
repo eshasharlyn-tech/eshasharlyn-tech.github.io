@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Esha Sharlyn Putrinta Br Sembiring — Mahasiswa TRPL</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Portofolio Esha Sharlyn Putrinta Br Sembiring, Mahasiswa Teknologi Rekayasa Perangkat Lunak (TRPL) yang fokus pada pemrograman, web development, dan database." />
+<meta name="keywords" content="Esha Sharlyn Putrinta Br Sembiring, Portofolio TRPL, Web Developer, Teknologi Rekayasa Perangkat Lunak, HTML, CSS, JavaScript, Database" />
+<meta name="author" content="Esha Sharlyn Putrinta Br Sembiring" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://esha.dev/index.html" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://esha.dev/index.html" />
+<meta property="og:title" content="Esha Sharlyn Putrinta Br Sembiring — Mahasiswa TRPL" />
+<meta property="og:description" content="Mahasiswa Teknologi Rekayasa Perangkat Lunak yang sedang belajar dan mengembangkan kemampuan di bidang pemrograman, web development, dan database." />
+<meta property="og:locale" content="id_ID" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://esha.dev/index.html" />
+<meta name="twitter:title" content="Esha Sharlyn Putrinta Br Sembiring — Mahasiswa TRPL" />
+<meta name="twitter:description" content="Mahasiswa Teknologi Rekayasa Perangkat Lunak yang sedang belajar dan mengembangkan kemampuan di bidang pemrograman, web development, dan database." />
+
+<!-- JSON-LD Structured Data (Schema.org/Person) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Esha Sharlyn Putrinta Br Sembiring",
+  "jobTitle": "Mahasiswa Teknologi Rekayasa Perangkat Lunak",
+  "url": "https://esha.dev/index.html",
+  "knowsAbout": ["HTML", "CSS", "Java", "C++", "MySQL", "Web Development", "Database"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          plum: '#3D1F2B',
+          blush: '#FFF1F5',
+          rose: '#E8749A',
+          lilac: '#B98BC9',
+          mauve: '#9C7B87'
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'serif'],
+          body: ['"Inter"', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-blush text-plum font-body antialiased">
+
+  <!-- NAVBAR -->
+  <header class="border-b border-plum/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-5" aria-label="Navigasi Utama">
+      <a href="index.html" class="font-display font-bold text-lg">shrlyn</a>
+
+      <!-- Desktop menu: hidden on mobile, flex on md+ (Responsive Design) -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-plum border-b-2 border-rose pb-1" aria-current="page">Beranda</a></li>
+        <li><a href="about.html" class="text-mauve hover:text-rose transition-colors">Tentang</a></li>
+        <li><a href="projects.html" class="text-mauve hover:text-rose transition-colors">Proyek</a></li>
+        <li><a href="todo.html" class="text-mauve hover:text-rose transition-colors">Tugas JS</a></li>
+        <li><a href="contact.html" class="text-mauve hover:text-rose transition-colors">Kontak</a></li>
+      </ul>
+
+      <a href="contact.html" class="hidden md:inline-block bg-plum text-blush px-5 py-2.5 rounded-full text-sm font-medium hover:bg-rose focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 transition-colors">
+        Hubungi Saya
+      </a>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden p-2 -mr-2" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <ul id="mobile-menu" class="hidden md:hidden flex-col gap-1 px-6 pb-5 text-sm font-medium">
+      <li><a href="index.html" class="block py-2 text-plum" aria-current="page">Beranda</a></li>
+      <li><a href="about.html" class="block py-2 text-mauve">Tentang</a></li>
+      <li><a href="projects.html" class="block py-2 text-mauve">Proyek</a></li>
+      <li><a href="todo.html" class="block py-2 text-mauve">Tugas JS</a></li>
+      <li><a href="contact.html" class="block py-2 text-mauve">Kontak</a></li>
+    </ul>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="relative overflow-hidden" aria-label="Profil dan Pengenalan">
+      <!-- Decorative pastel blobs -->
+      <div class="pointer-events-none absolute -top-24 -left-24 w-72 h-72 rounded-full bg-lilac/30 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute top-10 right-0 w-96 h-96 rounded-full bg-rose/25 blur-3xl" aria-hidden="true"></div>
+
+      <div class="relative max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
+          <div class="md:col-span-8">
+            <span class="inline-block bg-rose/15 text-rose px-4 py-1.5 rounded-full text-sm font-medium mb-5">Hii, saya🙌🏻</span>
+            <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-plum">
+              Esha Sharlyn Putrinta Br Sembiring
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-mauve max-w-xl">
+              Mahasiswa Teknologi Rekayasa Perangkat Lunak yang sedang belajar dan mengembangkan kemampuan di bidang pemrograman, web development, dan database. Senang mencoba hal baru dan membuat tampilan web yang sederhana, rapi, dan mudah digunakan.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="projects.html" class="bg-plum text-blush px-6 py-3 rounded-full font-medium hover:bg-rose focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 transition-colors">
+                Lihat Proyek
+              </a>
+              <a href="about.html" class="border border-plum/20 bg-white/60 px-6 py-3 rounded-full font-medium hover:border-rose hover:text-rose focus:outline-none focus:ring-2 focus:ring-rose transition-colors">
+                Tentang Saya
+              </a>
+            </div>
+          </div>
+                <div class="md:col-span-4">
+                <figure class="aspect-square rounded-[2rem] overflow-hidden shadow-xl shadow-rose/20" aria-label="Foto Profil Esha Sharlyn">
+                <img
+                src="eshaa.png"
+                alt="Foto Esha Sharlyn Putrinta Br Sembiring"
+                class="w-full h-full object-cover rotate-2"
+                loading="lazy"
+            />
+         </figure>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="bg-white" aria-label="Statistik dan Informasi Pendidikan">
+      <dl class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <dd class="font-display text-3xl font-bold text-rose">TRPL</dd>
+          <dt class="text-sm text-mauve mt-1">Prodi</dt>
+        </div>
+        <div>
+          <dd class="font-display text-3xl font-bold text-lilac">3</dd>
+          <dt class="text-sm text-mauve mt-1">Semester</dt>
+        </div>
+        <div>
+          <dd class="font-display text-3xl font-bold text-rose">1</dd>
+          <dt class="text-sm text-mauve mt-1">Organisasi</dt>
+        </div>
+        <div title="HTML, CSS, Java, C++, MySQL">
+          <dd class="font-display text-3xl font-bold text-lilac">5</dd>
+          <dt class="text-sm text-mauve mt-1">Teknologi favorit</dt>
+        </div>
+      </dl>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="max-w-6xl mx-auto px-6 py-20" aria-labelledby="featured-projects-heading">
+      <div class="flex items-end justify-between mb-10">
+        <h2 id="featured-projects-heading" class="font-display font-bold text-3xl sm:text-4xl text-plum">Tentang Perjalanan Saya</h2>
+      </div>
+
+      <article class="rounded-3xl border border-plum/10 p-10 sm:p-14 bg-gradient-to-br from-rose/10 to-lilac/10 flex flex-col items-center text-center gap-5">
+        <h3 class="font-display font-bold text-2xl sm:text-3xl text-plum max-w-lg">Sedikit tentang saya</h3>
+        <p class="text-mauve max-w-lg">Saya masih terus belajar dan mengembangkan kemampuan di bidang teknologi, terutama pemrograman, web development, dan database. Di sini saya membagikan proses belajar dan hal-hal yang sedang saya kerjakan.</p>
+        <a href="projects.html" class="inline-block bg-plum text-blush px-6 py-3 rounded-full font-medium hover:bg-rose transition-colors">Lihat Proyek Saya →</a>
+      </article>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-rose to-lilac" aria-labelledby="cta-heading">
+      <div class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <h2 id="cta-heading" class="font-display font-bold text-2xl sm:text-3xl text-white">Mau kenalan lebih dekat?</h2>
+        <a href="contact.html" class="shrink-0 bg-white text-plum px-6 py-3 rounded-full font-medium hover:bg-blush focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose transition-colors">
+          Yuk, Kenalan →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-mauve">
+    <p>&copy; 2026 Esha Sharlyn Putrinta. Dibuat dengan Tailwind CSS.</p>
+    <nav class="flex gap-6" aria-label="Media Sosial">
+      <a href="mailto:eshaputrinta@gmail.com" target="_blank" rel="noopener noreferrer" class="hover:text-rose transition-colors" aria-label="Profil Email Esha Sharlyn">Email</a>
+      <a href="https://www.instagram.com/shrlptrnta/" target="_blank" rel="noopener noreferrer" class="hover:text-rose transition-colors" aria-label="Profil Instagram Esha Sharlyn">Instagram</a>
+    </nav>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+  </script>
+</body>
+</html>

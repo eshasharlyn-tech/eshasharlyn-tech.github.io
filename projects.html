@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Proyek — Esha Sharlyn Putrinta Br Sembiring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { plum:'#3D1F2B', blush:'#FFF1F5', rose:'#E8749A', lilac:'#B98BC9', mauve:'#9C7B87' },
+      fontFamily: { display:['"Fraunces"','serif'], body:['"Inter"','sans-serif'] }
+    } }
+  }
+</script>
+</head>
+<body class="bg-blush text-plum font-body antialiased">
+
+  <header class="border-b border-plum/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
+      <a href="index.html" class="font-display font-bold text-lg">shrlyn</a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-mauve hover:text-rose transition-colors">Beranda</a></li>
+        <li><a href="about.html" class="text-mauve hover:text-rose transition-colors">Tentang</a></li>
+        <li><a href="projects.html" class="text-plum border-b-2 border-rose pb-1">Proyek</a></li>
+        <li><a href="todo.html" class="text-mauve hover:text-rose transition-colors">Tugas JS</a></li>
+        <li><a href="contact.html" class="text-mauve hover:text-rose transition-colors">Kontak</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block bg-plum text-blush px-5 py-2.5 rounded-full text-sm font-medium hover:bg-rose focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 transition-colors">Hubungi Saya</a>
+      <button id="menu-btn" class="md:hidden p-2 -mr-2" aria-label="Buka menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </nav>
+    <ul id="mobile-menu" class="hidden md:hidden flex-col gap-1 px-6 pb-5 text-sm font-medium">
+      <li><a href="index.html" class="block py-2 text-mauve">Beranda</a></li>
+      <li><a href="about.html" class="block py-2 text-mauve">Tentang</a></li>
+      <li><a href="projects.html" class="block py-2 text-plum">Proyek</a></li>
+      <li><a href="todo.html" class="block py-2 text-mauve">Tugas JS</a></li>
+      <li><a href="contact.html" class="block py-2 text-mauve">Kontak</a></li>
+    </ul>
+  </header>
+
+  <section class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <h1 class="font-display font-bold text-4xl sm:text-5xl mb-4">Semua Proyek</h1>
+    <p class="text-mauve max-w-xl mb-10">Kumpulan proyek yang pernah saya kerjakan, dari website statis sampai aplikasi kecil dengan interaktivitas JavaScript.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="project-grid">
+      <article class="project-card rounded-3xl border border-plum/10 bg-white hover:shadow-lg hover:-translate-y-1 transition-all overflow-hidden">
+        <div class="h-40 bg-blush flex items-center justify-center overflow-hidden">
+          <img src="logoo.jpeg" alt="Logo CaféYuk!! Singaraja, Bali" class="h-full w-full object-cover" loading="lazy" />
+        </div>
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">Website Café — CaféYuk!!</h3>
+          <p class="text-sm text-mauve">Website profil untuk kedai kopi CaféYuk!! di Singaraja, Bali — menampilkan menu, suasana, dan info kedai.</p>
+          <a href="https://ibkdsurya.github.io/Cafe-Yuk-/tentang.html" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-sm text-rose font-medium hover:underline">Lihat situs &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card rounded-3xl border border-plum/10 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="h-32 rounded-xl bg-plum/10 flex items-center justify-center mb-5"><span class="text-plum font-display font-bold">Limas</span></div>
+        <h3 class="font-semibold text-lg mb-2">Kalkulator Limas</h3>
+        <p class="text-sm text-mauve">Menghitung volume dan luas permukaan limas segiempat beraturan berdasarkan sisi alas dan tinggi.</p>
+        <a href="kalkulator-limas.html" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-sm text-rose font-medium hover:underline">Coba aplikasi &rarr;</a>
+      </article>
+    </div>
+  </section>
+
+  <footer class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-mauve border-t border-plum/10">
+    <p>&copy; 2026 Esha Sharlyn Putrinta. Dibuat dengan Tailwind CSS.</p>
+    <div class="flex gap-6">
+      <a href="mailto:eshaputrinta@gmail.com" class="hover:text-rose transition-colors">Email</a>
+      <a href="https://instagram.com/username-kamu" target="_blank" rel="noopener noreferrer" class="hover:text-rose transition-colors">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+      document.getElementById('mobile-menu').classList.toggle('flex');
+    });
+  </script>
+</body>
+</html>

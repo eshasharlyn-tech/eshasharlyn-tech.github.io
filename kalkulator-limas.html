@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kalkulator Limas — Esha Sharlyn Putrinta Br Sembiring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { plum:'#3D1F2B', blush:'#FFF1F5', rose:'#E8749A', lilac:'#B98BC9', mauve:'#9C7B87' },
+      fontFamily: { display:['"Fraunces"','serif'], body:['"Inter"','sans-serif'] }
+    } }
+  }
+</script>
+</head>
+<body class="bg-blush text-plum font-body antialiased">
+
+  <header class="border-b border-plum/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
+      <a href="index.html" class="font-display font-bold text-lg">shrlyn</a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-mauve hover:text-rose transition-colors">Beranda</a></li>
+        <li><a href="about.html" class="text-mauve hover:text-rose transition-colors">Tentang</a></li>
+        <li><a href="projects.html" class="text-mauve hover:text-rose transition-colors">Proyek</a></li>
+        <li><a href="todo.html" class="text-mauve hover:text-rose transition-colors">Tugas JS</a></li>
+        <li><a href="contact.html" class="text-mauve hover:text-rose transition-colors">Kontak</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block bg-plum text-blush px-5 py-2.5 rounded-full text-sm font-medium hover:bg-rose focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 transition-colors">Hubungi Saya</a>
+      <button id="menu-btn" class="md:hidden p-2 -mr-2" aria-label="Buka menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </nav>
+    <ul id="mobile-menu" class="hidden md:hidden flex-col gap-1 px-6 pb-5 text-sm font-medium">
+      <li><a href="index.html" class="block py-2 text-mauve">Beranda</a></li>
+      <li><a href="about.html" class="block py-2 text-mauve">Tentang</a></li>
+      <li><a href="projects.html" class="block py-2 text-mauve">Proyek</a></li>
+      <li><a href="todo.html" class="block py-2 text-mauve">Tugas JS</a></li>
+      <li><a href="contact.html" class="block py-2 text-mauve">Kontak</a></li>
+    </ul>
+  </header>
+
+  <section class="max-w-2xl mx-auto px-6 py-16 md:py-20">
+    <a href="projects.html" class="inline-flex items-center gap-1.5 text-sm text-mauve hover:text-rose transition-colors mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      Kembali ke Proyek
+    </a>
+
+    <div class="rounded-3xl border border-plum/10 bg-white p-6 sm:p-8">
+      <img src="limas.jpg" alt="Ilustrasi limas segiempat beraturan" class="w-full h-40 object-contain rounded-xl bg-blush mb-4" loading="lazy" />
+
+      <h1 class="font-display font-bold text-2xl mb-2">Kalkulator Limas</h1>
+      <p class="text-sm text-mauve mb-6">Hitung volume dan luas permukaan limas segiempat beraturan (alas persegi). Masukkan panjang sisi alas dan tinggi limas.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label for="sisi" class="block text-sm font-medium mb-1.5">Sisi Alas (s) — cm</label>
+          <input id="sisi" type="number" min="0" step="any" placeholder="contoh: 10"
+            class="w-full rounded-xl border border-plum/20 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-rose" />
+        </div>
+        <div>
+          <label for="tinggi" class="block text-sm font-medium mb-1.5">Tinggi Limas (t) — cm</label>
+          <input id="tinggi" type="number" min="0" step="any" placeholder="contoh: 12"
+            class="w-full rounded-xl border border-plum/20 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-rose" />
+        </div>
+      </div>
+
+      <button id="hitung-btn"
+        class="mt-6 w-full sm:w-auto bg-plum text-blush px-6 py-2.5 rounded-full text-sm font-medium hover:bg-rose focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 transition-colors">
+        Hitung
+      </button>
+
+      <p id="error-msg" class="hidden mt-4 text-sm text-rose">Isi sisi alas dan tinggi dengan angka lebih besar dari 0 ya.</p>
+
+      <div id="hasil" class="hidden mt-6 border-t border-plum/10 pt-6 space-y-4">
+        <div>
+          <p class="text-sm text-mauve">Volume Limas</p>
+          <p id="hasil-volume" class="font-display font-semibold text-2xl"></p>
+          <p id="rumus-volume" class="text-xs text-mauve mt-1"></p>
+        </div>
+        <div>
+          <p class="text-sm text-mauve">Luas Permukaan Limas</p>
+          <p id="hasil-luas" class="font-display font-semibold text-2xl"></p>
+          <p id="rumus-luas" class="text-xs text-mauve mt-1"></p>
+        </div>
+      </div>
+
+      <p class="text-xs text-mauve mt-6">Catatan: perhitungan mengasumsikan limas segiempat beraturan (alas persegi, puncak tepat di atas titik tengah alas).</p>
+    </div>
+  </section>
+
+  <footer class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-mauve border-t border-plum/10">
+    <p>&copy; 2026 Esha Sharlyn Putrinta. Dibuat dengan Tailwind CSS.</p>
+    <div class="flex gap-6">
+      <a href="mailto:eshaputrinta@gmail.com" class="hover:text-rose transition-colors">Email</a>
+      <a href="https://instagram.com/username-kamu" target="_blank" rel="noopener noreferrer" class="hover:text-rose transition-colors">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+      document.getElementById('mobile-menu').classList.toggle('flex');
+    });
+
+    function formatAngka(n) {
+      return n.toLocaleString('id-ID', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+    }
+
+    document.getElementById('hitung-btn').addEventListener('click', () => {
+      const s = parseFloat(document.getElementById('sisi').value);
+      const t = parseFloat(document.getElementById('tinggi').value);
+      const errorMsg = document.getElementById('error-msg');
+      const hasil = document.getElementById('hasil');
+
+      if (isNaN(s) || isNaN(t) || s <= 0 || t <= 0) {
+        errorMsg.classList.remove('hidden');
+        hasil.classList.add('hidden');
+        return;
+      }
+      errorMsg.classList.add('hidden');
+
+      const luasAlas = s * s;
+      const volume = (1 / 3) * luasAlas * t;
+
+      const tinggiSisiTegak = Math.sqrt(t * t + (s / 2) * (s / 2));
+      const luasSisiTegak = 4 * (0.5 * s * tinggiSisiTegak);
+      const luasPermukaan = luasAlas + luasSisiTegak;
+
+      document.getElementById('hasil-volume').textContent = `${formatAngka(volume)} cm³`;
+      document.getElementById('rumus-volume').textContent =
+        `V = 1/3 × (s × s) × t = 1/3 × ${formatAngka(luasAlas)} × ${t} = ${formatAngka(volume)} cm³`;
+
+      document.getElementById('hasil-luas').textContent = `${formatAngka(luasPermukaan)} cm²`;
+      document.getElementById('rumus-luas').textContent =
+        `L = luas alas + jumlah luas sisi tegak = ${formatAngka(luasAlas)} + ${formatAngka(luasSisiTegak)} = ${formatAngka(luasPermukaan)} cm²`;
+
+      hasil.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

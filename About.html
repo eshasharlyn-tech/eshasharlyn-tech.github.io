@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tentang Saya — Esha Sharlyn Putrinta Br Sembiring</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Tentang Esha Sharlyn Putrinta Br Sembiring, Mahasiswa Teknologi Rekayasa Perangkat Lunak (TRPL): latar belakang, keahlian, dan perjalanan belajar." />
+<meta name="keywords" content="Esha Sharlyn Putrinta Br Sembiring, Tentang Saya, Mahasiswa TRPL, HTML, CSS, Java, C++, MySQL" />
+<meta name="author" content="Esha Sharlyn Putrinta Br Sembiring" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://esha.dev/about.html" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://esha.dev/about.html" />
+<meta property="og:title" content="Tentang Saya — Esha Sharlyn Putrinta Br Sembiring" />
+<meta property="og:description" content="Mahasiswa Teknologi Rekayasa Perangkat Lunak yang sedang belajar pemrograman, web development, dan database." />
+<meta property="og:locale" content="id_ID" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://esha.dev/about.html" />
+<meta name="twitter:title" content="Tentang Saya — Esha Sharlyn Putrinta Br Sembiring" />
+<meta name="twitter:description" content="Mahasiswa Teknologi Rekayasa Perangkat Lunak yang sedang belajar pemrograman, web development, dan database." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          plum: '#3D1F2B',
+          blush: '#FFF1F5',
+          rose: '#E8749A',
+          lilac: '#B98BC9',
+          mauve: '#9C7B87'
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'serif'],
+          body: ['"Inter"', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-blush text-plum font-body antialiased">
+
+  <!-- NAVBAR -->
+  <header class="border-b border-plum/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-5" aria-label="Navigasi Utama">
+      <a href="index.html" class="font-display font-bold text-lg">shrlyn</a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-mauve hover:text-rose transition-colors">Beranda</a></li>
+        <li><a href="about.html" class="text-plum border-b-2 border-rose pb-1" aria-current="page">Tentang</a></li>
+        <li><a href="projects.html" class="text-mauve hover:text-rose transition-colors">Proyek</a></li>
+        <li><a href="todo.html" class="text-mauve hover:text-rose transition-colors">Tugas JS</a></li>
+        <li><a href="contact.html" class="text-mauve hover:text-rose transition-colors">Kontak</a></li>
+      </ul>
+
+      <a href="contact.html" class="hidden md:inline-block bg-plum text-blush px-5 py-2.5 rounded-full text-sm font-medium hover:bg-rose focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 transition-colors">
+        Hubungi Saya
+      </a>
+
+      <button id="menu-btn" class="md:hidden p-2 -mr-2" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <ul id="mobile-menu" class="hidden md:hidden flex-col gap-1 px-6 pb-5 text-sm font-medium">
+      <li><a href="index.html" class="block py-2 text-mauve">Beranda</a></li>
+      <li><a href="about.html" class="block py-2 text-plum" aria-current="page">Tentang</a></li>
+      <li><a href="projects.html" class="block py-2 text-mauve">Proyek</a></li>
+      <li><a href="todo.html" class="block py-2 text-mauve">Tugas JS</a></li>
+      <li><a href="contact.html" class="block py-2 text-mauve">Kontak</a></li>
+    </ul>
+  </header>
+
+  <main id="main-content">
+    <!-- INTRO -->
+    <section class="relative overflow-hidden" aria-label="Tentang Saya">
+      <div class="pointer-events-none absolute -top-20 -right-20 w-80 h-80 rounded-full bg-lilac/25 blur-3xl" aria-hidden="true"></div>
+
+      <div class="relative max-w-6xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-10">
+        <div class="md:col-span-4">
+          <figure class="aspect-square rounded-[2rem] overflow-hidden shadow-xl shadow-rose/20 sticky top-10" aria-label="Foto Profil Esha Sharlyn">
+            <img
+              src="eshaa.png"
+              alt="Foto Esha Sharlyn Putrinta Br Sembiring"
+              class="w-full h-full object-cover rotate-2"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
+        <div class="md:col-span-8">
+          <span class="inline-block bg-rose/15 text-rose px-4 py-1.5 rounded-full text-sm font-medium mb-5">Kenalan yuk</span>
+          <h1 class="font-display font-bold text-4xl sm:text-5xl mb-6 text-plum">Tentang Saya</h1>
+          <p class="text-lg text-mauve leading-relaxed mb-4">
+            Saya Esha Sharlyn Putrinta Br Sembiring, mahasiswa Teknologi Rekayasa Perangkat Lunak (TRPL) yang senang mempelajari bagaimana sebuah ide bisa berubah jadi aplikasi atau website yang benar-benar bisa dipakai orang. Saya suka memperhatikan detail kecil dari kerapian tampilan sampai bagaimana data tersusun rapi di balik layar.
+          </p>
+          <p class="text-lg text-mauve leading-relaxed">
+            Selain kuliah, saya juga aktif di organisasi kampus dan terus melatih kemampuan pemrograman, web development, serta database lewat proyek-proyek kecil seperti yang ada di halaman ini.
+          </p>
+
+          <!-- SKILLS -->
+          <h2 class="font-display font-bold text-2xl mt-12 mb-5 text-plum">Keahlian</h2>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 rounded-full bg-rose/15 text-rose text-sm font-medium">HTML</span>
+            <span class="px-4 py-2 rounded-full bg-lilac/15 text-lilac text-sm font-medium">CSS</span>
+            <span class="px-4 py-2 rounded-full bg-rose/15 text-rose text-sm font-medium">Tailwind CSS</span>
+            <span class="px-4 py-2 rounded-full bg-lilac/15 text-lilac text-sm font-medium">JavaScript</span>
+            <span class="px-4 py-2 rounded-full bg-lilac/15 text-lilac text-sm font-medium">C++</span>
+            <span class="px-4 py-2 rounded-full bg-rose/15 text-rose text-sm font-medium">MySQL</span>
+          </div>
+
+          <!-- PENDIDIKAN -->
+          <h2 class="font-display font-bold text-2xl mt-12 mb-6 text-plum">Riwayat Pendidikan</h2>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start bg-white rounded-2xl border border-plum/10 p-5">
+              <div class="w-12 h-12 shrink-0 rounded-xl bg-rose/15 flex items-center justify-center">
+                <span class="text-rose text-xl">🎓</span>
+              </div>
+              <div>
+                <p class="font-semibold text-plum">Teknologi Rekayasa Perangkat Lunak (TRPL)</p>
+                <p class="text-sm text-mauve">Universitas Pendidikan Ganesha — Semester 3, 2025 – Sekarang</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start bg-white rounded-2xl border border-plum/10 p-5">
+              <div class="w-12 h-12 shrink-0 rounded-xl bg-lilac/15 flex items-center justify-center">
+                <span class="text-lilac text-xl">🏫</span>
+              </div>
+              <div>
+                <p class="font-semibold text-plum">SMA — IPA</p>
+                <p class="text-sm text-mauve">SMAN 7 TAMBUN SELATAN  — 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TIMELINE -->
+          <h2 class="font-display font-bold text-2xl mt-12 mb-6 text-plum">Perjalanan</h2>
+          <ol class="relative border-l-2 border-plum/10 pl-6 space-y-8">
+            <li>
+              <span class="absolute -left-[9px] w-4 h-4 rounded-full bg-rose"></span>
+              <p class="text-sm text-mauve">Semester 3 — Sekarang</p>
+              <p class="font-semibold text-plum">Mahasiswa TRPL</p>
+              <p class="text-sm text-mauve mt-1">Mendalami pemrograman, web development, dan basis data lewat perkuliahan dan proyek mandiri.</p>
+            </li>
+            <li>
+              <span class="absolute -left-[9px] w-4 h-4 rounded-full bg-lilac"></span>
+              <p class="text-sm text-mauve">Sejak Semester 2</p>
+              <p class="font-semibold text-plum">Anggota Organisasi Kampus HMJ </p>
+              <p class="text-sm text-mauve mt-1">Ikut berkontribusi dan belajar kerja sama tim di luar kegiatan akademik.</p>
+            </li>
+            <li>
+              <span class="absolute -left-[9px] w-4 h-4 rounded-full bg-plum/30"></span>
+              <p class="text-sm text-mauve">Semester 1</p>
+              <p class="font-semibold text-plum">Mulai Belajar Dasar Pemrograman</p>
+              <p class="text-sm text-mauve mt-1">Mengenal HTML, CSS, dan logika dasar Java serta C++ untuk pertama kali.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-rose to-lilac" aria-labelledby="about-cta-heading">
+      <div class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <h2 id="about-cta-heading" class="font-display font-bold text-2xl sm:text-3xl text-white">Penasaran dengan proyek yang sedang saya kerjakan?</h2>
+        <a href="projects.html" class="shrink-0 bg-white text-plum px-6 py-3 rounded-full font-medium hover:bg-blush focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose transition-colors">
+          Lihat Proyek →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-mauve">
+    <p>&copy; 2026 Esha Sharlyn Putrinta. Dibuat dengan Tailwind CSS.</p>
+    <nav class="flex gap-6" aria-label="Media Sosial">
+      <a href="mailto:eshaputrinta@gmail.com" class="hover:text-rose transition-colors" aria-label="Email Esha Sharlyn">Email</a>
+      <a href="https://instagram.com/username-kamu" target="_blank" rel="noopener noreferrer" class="hover:text-rose transition-colors" aria-label="Profil Instagram Esha Sharlyn">Instagram</a>
+    </nav>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+  </script>
+</body>
+</html>
